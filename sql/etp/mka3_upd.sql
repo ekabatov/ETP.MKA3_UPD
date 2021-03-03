@@ -1,7 +1,11 @@
-INSERT INTO etp_service (formid,service,description,created,started) VALUES ('081401','MKA3_UPD','Направление и рассмотрение требований об отображении в правилах землепользования и застройки города Москвы границ зон с особыми условиями использования территорий, границ территорий объектов культурного наследия',null,null);
-INSERT INTO etp_service (formid,service,description,created,started) VALUES ('063001','MKA3_UPD','Направление предложений о внесении изменений в правила землепользования и застройки города Москвы',null,null);
+INSERT INTO etp_service (formid,service,description,created,started) VALUES ('081401','mka3_upd','Направление и рассмотрение требований об отображении в правилах землепользования и застройки города Москвы границ зон с особыми условиями использования территорий, границ территорий объектов культурного наследия',null,null);
+
+DELETE FROM etp_service WHERE formid = '063001';
+INSERT INTO etp_service (formid,service,description,created,started) VALUES ('063001','mka3_upd','Направление предложений о внесении изменений в правила землепользования и застройки города Москвы',null,null);
 
 INSERT INTO efspsignservice_converter (servicetypecode,dstq,dstqmgr,documentclass,printrequired,msgtype) VALUES ('081401','ETP.CNV.LOOPBACK',null,'ApplicationForRenderingStateServiceV6_1',true,'CoordinateMessage');
+
+DELETE FROM efspsignservice_converter WHERE servicetypecode = '063001';
 INSERT INTO efspsignservice_converter (servicetypecode,dstq,dstqmgr,documentclass,printrequired,msgtype) VALUES ('063001','ETP.CNV.LOOPBACK',null,'ApplicationForRenderingStateServiceV6_1',true,'CoordinateMessage');
 INSERT INTO efspsignservice_converter (servicetypecode,dstq,dstqmgr,documentclass,printRequired,msgType) VALUES ('063001','ETP.CNV.LOOPBACK',null,'AdditionalActionAccordingToStatementInFormatV6_1', false, 'CoordinateStatusMessage');
 

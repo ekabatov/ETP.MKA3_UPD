@@ -16,7 +16,7 @@
       <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="631,63" computeExpression="esql://routine/mos.etp.service.system#V6MessageSetMethodHeaders.Main">
         <translation xmi:type="utility:ConstantString" string="Set Method"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="216,292" queueName="FN.APPLICATION_V61">
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="213,285" queueName="FN.APPLICATION_V61">
         <translation xmi:type="utility:ConstantString" string="FN.APPLICATION_V61"/>
       </nodes>
       <nodes xmi:type="mos_etp_service_sma_OivEndRoutePointApplicationV6_1.subflow:FCMComposite_1" xmi:id="FCMComposite_1_13" location="935,108">
@@ -25,10 +25,10 @@
       <nodes xmi:type="mos_etp_service_system_V6_1App_To_EColl.subflow:FCMComposite_1" xmi:id="FCMComposite_1_15" location="972,331" Type_EColl="Mka3_App">
         <translation xmi:type="utility:ConstantString" string="V6_1App_To_EColl"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_17" location="1001,231" queueName="ETP.1010SENDER" newMsgId="true" request="true" replyToQ="MKA3.STATUS_OUT">
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_17" location="1001,231" queueName="ETP.1010SENDER" newMsgId="true" request="true" replyToQ="MKA3_UPD.STATUS_OUT">
         <translation xmi:type="utility:ConstantString" string="ETP.1010SENDER"/>
       </nodes>
-      <nodes xmi:type="mos_etp_service_efsp_EfspApplicationV6_1SignServiceInbound.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="334,133" Service_Alias="mka3">
+      <nodes xmi:type="mos_etp_service_efsp_EfspApplicationV6_1SignServiceInbound.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="334,133" Service_Alias="mka3_upd">
         <translation xmi:type="utility:ConstantString" string="EfspApplicationV6_1SignServiceInbound"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>

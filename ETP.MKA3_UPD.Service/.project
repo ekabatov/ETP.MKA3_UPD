@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ETP.MKA3.Service</name>
+	<name>ETP.MKA3_UPD.Service</name>
 	<comment></comment>
 	<projects>
 		<project>ETP.Services.LIB</project>
