@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmMQInput.msgnode="ComIbmMQInput.msgnode" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:mos_etp_service_efsp_EfspApplicationV6_1SignServiceInbound.subflow="mos/etp/service/efsp/EfspApplicationV6_1SignServiceInbound.subflow" xmlns:mos_etp_service_sma_OivEndRoutePointApplicationV6_1.subflow="mos/etp/service/sma/OivEndRoutePointApplicationV6_1.subflow"
+    xmlns:mos_etp_service_system_V6_1App_To_EColl.subflow="mos/etp/service/system/V6_1App_To_EColl.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="mos/etp/service/mka3/EfpApplicationV61Handler.msgflow" nsPrefix="mos_etp_service_mka3_EfpApplicationV61Handler.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <translation xmi:type="utility:TranslatableString" key="EfpApplicationV61Handler" bundleName="mos/etp/service/mka3/EfpApplicationV61Handler" pluginId="ETP.MKA3_UPD.Service"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/ETP.MKA3_UPD.Service/icons/full/obj16/EfpApplicationV61Handler.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/ETP.MKA3_UPD.Service/icons/full/obj30/EfpApplicationV61Handler.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="88,133" queueName="MKA3_UPD.ETP.REQUEST_V61" messageDomainProperty="XMLNSC">
+        <translation xmi:type="utility:ConstantString" string="MKA3_UPD.ETP.REQUEST_V61"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="733,133" queueName="MKA3_UPD.APPLICATION_INC">
+        <translation xmi:type="utility:ConstantString" string="MKA3_UPD.APPLICATION_INC"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="631,63" computeExpression="esql://routine/mos.etp.service.system#V6MessageSetMethodHeaders.Main">
+        <translation xmi:type="utility:ConstantString" string="Set Method"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="216,292" queueName="FN.APPLICATION_V61">
+        <translation xmi:type="utility:ConstantString" string="FN.APPLICATION_V61"/>
+      </nodes>
+      <nodes xmi:type="mos_etp_service_sma_OivEndRoutePointApplicationV6_1.subflow:FCMComposite_1" xmi:id="FCMComposite_1_13" location="935,108">
+        <translation xmi:type="utility:ConstantString" string="OivEndRoutePointApplicationV6_1"/>
+      </nodes>
+      <nodes xmi:type="mos_etp_service_system_V6_1App_To_EColl.subflow:FCMComposite_1" xmi:id="FCMComposite_1_15" location="972,331" Type_EColl="Mka3_App">
+        <translation xmi:type="utility:ConstantString" string="V6_1App_To_EColl"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_17" location="1001,231" queueName="ETP.1010SENDER" newMsgId="true" request="true" replyToQ="MKA3.STATUS_OUT">
+        <translation xmi:type="utility:ConstantString" string="ETP.1010SENDER"/>
+      </nodes>
+      <nodes xmi:type="mos_etp_service_efsp_EfspApplicationV6_1SignServiceInbound.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="334,133" Service_Alias="mka3">
+        <translation xmi:type="utility:ConstantString" string="EfspApplicationV6_1SignServiceInbound"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_14" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_14" targetNode="FCMComposite_1_15" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_16" targetNode="FCMComposite_1_17" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_17" targetNode="FCMComposite_1_13" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+    </composition>
+    <propertyOrganizer/>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>
